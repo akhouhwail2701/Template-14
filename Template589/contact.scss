@@ -1,0 +1,184 @@
+@use "shop.scss" as *;
+
+#contact-content {
+    width: 100%;
+    height: 1000px;
+
+    margin: {
+        top: 5%;
+        bottom: 5%;
+    }
+
+    padding: {
+        left: 5%;
+        right: 5%;
+    }
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .content {
+        background-color: #f5f5f5;
+        width: 45%;
+        height: 70%;
+        border-radius: 30px;
+        padding: 5%;
+
+        h4 {
+            color: $forth-color;
+            text-transform: uppercase;
+            margin-bottom: 2%;
+        }
+
+        h1 {
+            text-transform: capitalize;
+            margin-bottom: 8%;
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 2;
+            color: #000000ba;
+            margin-bottom: 15%;
+
+            &:not(:first-of-type) {
+                color: gray;
+                text-transform: capitalize;
+                font-weight: lighter;
+                font-weight: bold;
+                margin-bottom: 10%;
+            }
+        }
+
+        span {
+            text-transform: capitalize;
+            letter-spacing: 0.1em;
+            font-weight: lighter;
+        }
+    }
+
+    form {
+        width: 45%;
+        height: 80%;
+        border-radius: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .maps {
+            width: 100%;
+            height: 40%;
+            border-radius: 30px;
+        }
+
+        input:not([type="submit"]) {
+            width: 47.5%;
+            height: 7.5%;
+            background-color: #f5f5f5;
+            border-radius: 25px;
+            border: none;
+            padding-left: 5%;
+
+            &::placeholder {
+                text-transform: capitalize;
+            }
+        }
+
+        textarea {
+            width: 100%;
+            height: 18%;
+            background-color: #f5f5f5;
+            border: none;
+            border-radius: 30px;
+            padding-left: 5%;
+            padding-top: 5%;
+
+            &::placeholder {
+                text-transform: capitalize;
+            }
+        }
+
+        input[type="submit"] {
+            width: 40%;
+            height: 7.5%;
+            border-radius: 25px;
+            background-color: $forth-color;
+            text-transform: uppercase;
+            color: #fff;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            transition-duration: 0.5s;
+
+            &:hover {
+                background-color: $second-color;
+            }
+        }
+    }
+
+    @media (max-width:992px) {
+        height: 1200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .content {
+            width: 100%;
+            height: 35%;
+
+            h4 {
+                font-size: 15px;
+                margin-bottom: 1%;
+            }
+
+            h1 {
+                font-size: 35px;
+                margin-bottom: 5%;
+            }
+
+            p {
+                &:first-of-type {
+                    margin-bottom: 3%;
+                    font-size: 12px;
+                }
+
+                &:not(:first-of-type) {
+                    margin-bottom: 1%;
+                    font-size: 12px;
+                }
+            }
+
+            span {
+                font-size: 12px;
+            }
+        }
+
+        form {
+            width: 100%;
+            height: 55%;
+        }
+    }
+
+    @media (max-width:767px) {
+        form {
+            input:not([type="submit"]) {
+                width: 100%;
+                height: 8%;
+            }
+
+            input[type="submit"] {
+                width: 30%;
+                height: 5%;
+                font-size: 10px;
+                margin-left: 50%;
+                transform: translate(-50%);
+            }
+        }
+    }
+}
